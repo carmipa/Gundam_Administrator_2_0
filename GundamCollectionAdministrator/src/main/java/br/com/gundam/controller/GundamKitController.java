@@ -20,6 +20,8 @@ import java.time.LocalDate;
 @RequestMapping("/kits")
 public class GundamKitController {
 
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(GundamKitController.class);
+
     private final GundamKitService svc;
     private final FileStorageService storage;
 
@@ -41,6 +43,7 @@ public class GundamKitController {
             Model model) {
 
         Pageable pageable = PageRequest.of(page, size);
+        logger.info("🔍 Listing kits. Model: {}, Grade: {}, Universe: {}, Page: {}", modelo, gradeId, universeId, page);
         Page<GundamKit> p = svc.search(modelo, gradeId, universoId, de, ate, pageable);
 
         model.addAttribute("page", p);
@@ -80,8 +83,7 @@ public class GundamKitController {
             @Valid @ModelAttribute("kit") GundamKit kit,
             @RequestParam(value = "fotoCaixaFile", required = false) MultipartFile fotoCaixaFile,
             @RequestParam(value = "fotoMontagemFile", required = false) MultipartFile fotoMontagemFile,
-            Model model
-    ) throws IOException {
+            Model model) throws IOException {
 
         // uploads opcionais (armazenamento padronizado)
         if (fotoCaixaFile != null && !fotoCaixaFile.isEmpty()) {
@@ -100,6 +102,7 @@ public class GundamKitController {
     /* ===================== DETALHES ===================== */
     @GetMapping("/{id}")
     public String detalhes(@PathVariable Long id, Model model) {
+        logger.info("👀 Viewing details for kit ID: {}", id);
         model.addAttribute("kit", svc.getById(id));
         model.addAttribute("pageName", "kits");
         return "kits/details";
@@ -123,8 +126,8 @@ public class GundamKitController {
             @PathVariable Long id,
             @Valid @ModelAttribute("kit") GundamKit form,
             @RequestParam(value = "fotoCaixaFile", required = false) MultipartFile fotoCaixaFile,
-            @RequestParam(value = "fotoMontagemFile", required = false) MultipartFile fotoMontagemFile
-    ) throws IOException {
+            @RequestParam(value = "fotoMontagemFile", required = false) MultipartFile fotoMontagemFile)
+            throws IOException {
 
         var kit = svc.getById(id);
 

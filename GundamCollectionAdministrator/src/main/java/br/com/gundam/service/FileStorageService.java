@@ -20,14 +20,20 @@ public class FileStorageService {
         Files.createDirectories(this.root);
     }
 
-    public String save(MultipartFile file, String prefix) throws IOException {
-        if (file == null || file.isEmpty()) return null;
-        String original = StringUtils.cleanPath(file.getOriginalFilename());
-        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
-        String filename = prefix + "_" + timestamp + "_" + original.replaceAll("\\s+", "_");
-        Path target = this.root.resolve(filename);
-        Files.copy(file.getInputStream(), target, StandardCopyOption.REPLACE_EXISTING);
-        return filename; // será servido por um handler estático
+    public String save(MultipartFile file, String prefix) {
+        try {
+            if (file == null || file.isEmpty())
+                return null;
+            String original = StringUtils.cleanPath(file.getOriginalFilename());
+            String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+            String filename = prefix + "_" + timestamp + "_" + original.replaceAll("\\s+", "_");
+            Path target = this.root.resolve(filename);
+            Files.copy(file.getInputStream(), target, StandardCopyOption.REPLACE_EXISTING);
+            return filename; // será servido por um handler estático
+        } catch (IOException e) {
+            throw new br.com.gundam.exception.GundamStorageException(
+                    "Falha ao armazenar arquivo " + file.getOriginalFilename(), e);
+        }
     }
 
     public Path resolve(String filename) {

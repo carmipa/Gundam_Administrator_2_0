@@ -26,6 +26,8 @@ import java.util.Map;
 @Service
 public class GundamKitService {
 
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(GundamKitService.class);
+
     private final GundamKitRepository kits;
     private final GradeRepository grades;
     private final EscalaRepository escalas;
@@ -33,10 +35,10 @@ public class GundamKitService {
     private final UniversoRepository universos;
 
     public GundamKitService(GundamKitRepository kits,
-                            GradeRepository grades,
-                            EscalaRepository escalas,
-                            AlturaPadraoRepository alturas,
-                            UniversoRepository universos) {
+            GradeRepository grades,
+            EscalaRepository escalas,
+            AlturaPadraoRepository alturas,
+            UniversoRepository universos) {
         this.kits = kits;
         this.grades = grades;
         this.escalas = escalas;
@@ -45,42 +47,59 @@ public class GundamKitService {
     }
 
     @Cacheable("grades_all")
-    public List<Grade> findAllGrades() { return grades.findAll(); }
+    public List<Grade> findAllGrades() {
+        return grades.findAll();
+    }
 
     @Cacheable("escalas_all")
-    public List<Escala> findAllEscalas() { return escalas.findAll(); }
+    public List<Escala> findAllEscalas() {
+        return escalas.findAll();
+    }
 
     @Cacheable("alturas_all")
-    public List<AlturaPadrao> findAllAlturas() { return alturas.findAll(); }
+    public List<AlturaPadrao> findAllAlturas() {
+        return alturas.findAll();
+    }
 
     @Cacheable("universos_all")
-    public List<Universo> findAllUniversos() { return universos.findAll(); }
+    public List<Universo> findAllUniversos() {
+        return universos.findAll();
+    }
 
-    @CacheEvict(value = {"kit_by_id"}, allEntries = true)
-    public GundamKit save(GundamKit g){ return kits.save(g); }
+    @CacheEvict(value = { "kit_by_id" }, allEntries = true)
+    public GundamKit save(GundamKit g) {
+        logger.info("💾 Saving kit: {}", g.getModelo());
+        return kits.save(g);
+    }
 
-    @CacheEvict(value = {"kit_by_id"}, allEntries = true)
-    public void deleteById(Long id){ kits.deleteById(id); }
+    @CacheEvict(value = { "kit_by_id" }, allEntries = true)
+    public void deleteById(Long id) {
+        logger.warn("🗑️ Deleting kit ID: {}", id);
+        kits.deleteById(id);
+    }
 
     @Cacheable(value = "kit_by_id", key = "#id")
-    public GundamKit getById(Long id){ return kits.findById(id).orElseThrow(); }
+    public GundamKit getById(Long id) {
+        return kits.findById(id)
+                .orElseThrow(() -> new br.com.gundam.exception.GundamResourceNotFoundException(
+                        "Gundam Kit não encontrado com ID: " + id));
+    }
 
-    public Page<GundamKit> search(String modelo, Long gradeId, LocalDate de, LocalDate ate, Pageable pageable){
+    public Page<GundamKit> search(String modelo, Long gradeId, LocalDate de, LocalDate ate, Pageable pageable) {
         Specification<GundamKit> spec = Specification.allOf(
                 GundamKitSpecifications.modeloLike(modelo),
                 GundamKitSpecifications.gradeIdEquals(gradeId),
-                GundamKitSpecifications.dataCompraBetween(de, ate)
-        );
+                GundamKitSpecifications.dataCompraBetween(de, ate));
         return kits.findAll(spec, pageable);
     }
 
-    public Page<GundamKit> search(String modelo, Long gradeId, Long universoId, LocalDate de, LocalDate ate, Pageable pageable){
+    public Page<GundamKit> search(String modelo, Long gradeId, Long universoId, LocalDate de, LocalDate ate,
+            Pageable pageable) {
         Specification<GundamKit> spec = Specification.allOf(
                 GundamKitSpecifications.modeloLike(modelo),
                 GundamKitSpecifications.gradeIdEquals(gradeId),
                 GundamKitSpecifications.universoIdEquals(universoId),
-                GundamKitSpecifications.dataCompraBetween(de, ate)
-        );
+                GundamKitSpecifications.dataCompraBetween(de, ate));
         return kits.findAll(spec, pageable);
     }
 
@@ -93,6 +112,5 @@ public class GundamKitService {
         reportData.put("totalDeKits", kits.count());
         return reportData;
     }
-
 
 }

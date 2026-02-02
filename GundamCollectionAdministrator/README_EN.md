@@ -182,6 +182,8 @@ docker compose down
 
 If you want to run the application directly on the Host (Windows/Linux/Mac) via Gradle, you need to **override the database URL** to point to the local file, since the container path `/app/data` does not exist on your machine.
 
+🚨 **Important**: Make sure **Docker is stopped** (`docker compose down`) before running locally, otherwise port **8080** will be in use and an error will occur.
+
 **Command (Windows Powershell):**
 
 ```powershell

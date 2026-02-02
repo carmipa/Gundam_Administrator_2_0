@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}"></head>
+<body class="rx78-theme">
+
+<header th:replace="~{layout :: body/header}"></header>
+
+<main class="container" style="text-align: center; padding: 4rem 1rem;">
+    <div style="background: rgba(20,20,30,0.8); padding: 2rem; border-radius: 8px; border: 1px solid var(--gundam-yellow); max-width: 600px; margin: 0 auto;">
+        <h1 style="font-size: 4rem; color: var(--gundam-yellow); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif;">404</h1>
+        <h2 style="color: var(--text-main); margin-bottom: 1rem;">Recurso Não Encontrado</h2>
+        <p style="color: var(--text-dim); font-size: 1.2rem; margin-bottom: 2rem;"
+           th:text="${errorMessage} ?: 'O recurso que você está procurando não existe ou foi movido.'">
+            Erro desconhecido.
+        </p>
+
+        <a th:href="@{/}" class="btn btn-primary">
+            Retornar à Base
+        </a>
+    </div>
+</main>
+
+<footer th:replace="~{layout :: body/footer}"></footer>
+
+</body>
+</html>

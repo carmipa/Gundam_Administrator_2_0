@@ -182,6 +182,8 @@ docker compose down
 
 Dockerを使用せず、ホスト (Windows/Linux/Mac) でGradleを使用して直接アプリケーションを実行する場合は、コンテナパス `/app/data` がマシン上に存在しないため、**データベースURLを上書き**してローカルファイルを指すようにする必要があります。
 
+🚨 **重要**: ローカルで実行する前に、必ず **Dockerが停止していること** (`docker compose down`) を確認してください。そうしないと、ポート **8080** が使用中になり、エラーが発生します。
+
 **コマンド (Windows Powershell):**
 
 ```powershell

@@ -182,6 +182,8 @@ docker compose down
 
 Caso queira rodar a aplicação diretamente no Host (Windows/Linux/Mac) via Gradle, você precisa **sobrescrever a URL do banco** para apontar para o arquivo local, já que o caminho `/app/data` do container não existe na sua máquina.
 
+🚨 **Importante**: Certifique-se de que o **Docker está parado** (`docker compose down`) antes de rodar localmente, caso contrário a porta **8080** estará ocupada e ocorrerá erro.
+
 **Comando (Windows Powershell):**
 
 ```powershell
