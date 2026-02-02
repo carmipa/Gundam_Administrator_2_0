@@ -110,6 +110,11 @@ public class GundamKitService {
         reportData.put("kitsMaisCaros", kits.findKitsMaisCaros());
         reportData.put("kitsMaisBaratos", kits.findKitsMaisBaratos());
         reportData.put("totalDeKits", kits.count());
+
+        // Dados para Gráficos
+        reportData.put("kitsPorGrade", kits.countKitsByGrade());
+        reportData.put("kitsPorUniverso", kits.countKitsByUniverso());
+
         return reportData;
     }
 

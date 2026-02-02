@@ -1,65 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org" th:with="pageTitle=#{reports.title}">
+
 <head th:replace="~{layout :: head}"></head>
+
 <body class="rx78-theme">
-<header th:replace="~{layout :: body/header}"></header>
+    <header th:replace="~{layout :: body/header}"></header>
 
-<main class="container">
-    <h2 th:text="#{reports.heading}">Relatório Financeiro da Coleção</h2>
-    <p style="color: var(--text-dim); margin-bottom: 2rem;" th:text="#{reports.description}">Análise de custos e resumo quantitativo da sua coleção de Gunpla.</p>
+    <main class="container">
+        <h2 th:text="#{reports.heading}">Relatório Financeiro da Coleção</h2>
+        <p style="color: var(--text-dim); margin-bottom: 2rem;" th:text="#{reports.description}">Análise de custos e
+            resumo quantitativo da sua coleção de Gunpla.</p>
 
-    <div class="form-grid">
-        <div class="card" style="text-align: center;">
-            <h3 style="color: var(--text-dim); font-size: 1rem;" th:text="#{reports.total_cost}">CUSTO TOTAL DA COLEÇÃO</h3>
-            <p style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--rx-green); margin: 0;"
-               th:text="${report.custoTotal != null ? #numbers.formatCurrency(report.custoTotal) : 'R$ 0,00'}">
-                R$ 2.580,00
-            </p>
+        <div class="form-grid">
+            <div class="card" style="text-align: center;">
+                <h3 style="color: var(--text-dim); font-size: 1rem;" th:text="#{reports.total_cost}">CUSTO TOTAL DA
+                    COLEÇÃO</h3>
+                <p style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--rx-green); margin: 0;"
+                    th:text="${report.custoTotal != null ? #numbers.formatCurrency(report.custoTotal) : 'R$ 0,00'}">
+                    R$ 2.580,00
+                </p>
+            </div>
+
+            <div class="card" style="text-align: center;">
+                <h3 style="color: var(--text-dim); font-size: 1rem;" th:text="#{reports.avg_cost}">CUSTO MÉDIO POR KIT
+                </h3>
+                <p style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--rx-yellow); margin: 0;"
+                    th:text="${report.custoMedio != null ? #numbers.formatCurrency(report.custoMedio) : 'R$ 0,00'}">
+                    R$ 215,00
+                </p>
+            </div>
+
+            <div class="card" style="text-align: center;">
+                <h3 style="color: var(--text-dim); font-size: 1rem;" th:text="#{reports.total_units}">TOTAL DE UNIDADES
+                </h3>
+                <p style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--rx-blue); margin: 0;"
+                    th:text="${report.totalDeKits}">
+                    12
+                </p>
+            </div>
         </div>
 
-        <div class="card" style="text-align: center;">
-            <h3 style="color: var(--text-dim); font-size: 1rem;" th:text="#{reports.avg_cost}">CUSTO MÉDIO POR KIT</h3>
-            <p style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--rx-yellow); margin: 0;"
-               th:text="${report.custoMedio != null ? #numbers.formatCurrency(report.custoMedio) : 'R$ 0,00'}">
-                R$ 215,00
-            </p>
-        </div>
+        <div class="form-grid mt-4">
+            <div class="card">
+                <h4 th:text="#{reports.most_expensive}">Destaque: Kit(s) de Maior Valor</h4>
+                <div th:if="${not #lists.isEmpty(report.kitsMaisCaros)}">
+                    <div th:each="kit : ${report.kitsMaisCaros}"
+                        style="border-bottom: 1px solid var(--ring); padding: 8px 0;">
+                        <a th:href="@{|/kits/${kit.id}|}" th:text="${kit.modelo}" style="font-weight: 700;"></a>
+                        <strong th:text="${#numbers.formatCurrency(kit.preco)}"
+                            style="float: right; color: var(--rx-green);"></strong>
+                    </div>
+                </div>
+                <p th:if="${#lists.isEmpty(report.kitsMaisCaros)}" style="color: var(--text-dim);"
+                    th:text="#{reports.no_kits}">Nenhum kit cadastrado.</p>
+            </div>
 
-        <div class="card" style="text-align: center;">
-            <h3 style="color: var(--text-dim); font-size: 1rem;" th:text="#{reports.total_units}">TOTAL DE UNIDADES</h3>
-            <p style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--rx-blue); margin: 0;"
-               th:text="${report.totalDeKits}">
-                12
-            </p>
+            <div class="card">
+                <h4 th:text="#{reports.cheapest}">Destaque: Kit(s) de Menor Valor</h4>
+                <div th:if="${not #lists.isEmpty(report.kitsMaisBaratos)}">
+                    <div th:each="kit : ${report.kitsMaisBaratos}"
+                        style="border-bottom: 1px solid var(--ring); padding: 8px 0;">
+                        <a th:href="@{|/kits/${kit.id}|}" th:text="${kit.modelo}" style="font-weight: 700;"></a>
+                        <strong th:text="${#numbers.formatCurrency(kit.preco)}"
+                            style="float: right; color: var(--rx-red);"></strong>
+                    </div>
+                </div>
+                <p th:if="${#lists.isEmpty(report.kitsMaisBaratos)}" style="color: var(--text-dim);"
+                    th:text="#{reports.no_kits}">Nenhum kit cadastrado.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- CHART.JS INTEGRATION -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        document.addEventListener("DOMContentLoaded", function () {
+            // DADOS DO BACKEND (Thymeleaf injeta aqui)
+            const gradesData = /*[[${report.kitsPorGrade}]]*/[];
+            const universosData = /*[[${report.kitsPorUniverso}]]*/[];
+
+            // PROCESSAMENTO DE DADOS (Grade)
+            const gradesLabels = gradesData.map(item => item[0]);
+            const gradesValues = gradesData.map(item => item[1]);
+
+            // PROCESSAMENTO DE DADOS (Universo)
+            const universosLabels = universosData.map(item => item[0]);
+            const universosValues = universosData.map(item => item[1]);
+
+            // CORES DO TEMA RX-78
+            const themeColors = ['#e0cb2d', '#2d5ee0', '#e02d2d', '#ffffff', '#9ca3af'];
+
+            // CHART 1: KITS POR GRADE (Doughnut)
+            new Chart(document.getElementById('chartGrades'), {
+                type: 'doughnut',
+                data: {
+                    labels: gradesLabels,
+                    datasets: [{
+                        data: gradesValues,
+                        backgroundColor: themeColors,
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { color: '#9ca3af', boxWidth: 12, padding: 20 } },
+                        title: { display: true, text: 'Distribuição por Grade', color: '#ffffff', font: { size: 16 }, padding: { bottom: 20 } }
+                    },
+                    layout: { padding: 10 }
+                }
+            });
+
+            // CHART 2: KITS POR UNIVERSO (Bar)
+            new Chart(document.getElementById('chartUniversos'), {
+                type: 'bar',
+                data: {
+                    labels: universosLabels,
+                    datasets: [{
+                        label: 'Quantidade',
+                        data: universosValues,
+                        backgroundColor: '#2d5ee0',
+                        borderColor: '#ffffff',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: '#374151' }, ticks: { color: '#9ca3af', stepSize: 1 } },
+                        x: { grid: { display: false }, ticks: { color: '#9ca3af' } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: true, text: 'Kits por Universo', color: '#ffffff', font: { size: 16 }, padding: { bottom: 20 } }
+                    }
+                }
+            });
+        });
+        /*]]>*/
+    </script>
+
+    <!-- LAYOUT DOS GRÁFICOS -->
+    <div class="container"
+        style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; margin-bottom: 4rem;">
+        <div class="card" style="padding: 1.5rem; height: 400px;">
+            <canvas id="chartGrades"></canvas>
+        </div>
+        <div class="card" style="padding: 1.5rem; height: 400px;">
+            <canvas id="chartUniversos"></canvas>
         </div>
     </div>
 
-    <div class="form-grid mt-4">
-        <div class="card">
-            <h4 th:text="#{reports.most_expensive}">Destaque: Kit(s) de Maior Valor</h4>
-            <div th:if="${not #lists.isEmpty(report.kitsMaisCaros)}">
-                <div th:each="kit : ${report.kitsMaisCaros}" style="border-bottom: 1px solid var(--ring); padding: 8px 0;">
-                    <a th:href="@{|/kits/${kit.id}|}" th:text="${kit.modelo}" style="font-weight: 700;"></a>
-                    <strong th:text="${#numbers.formatCurrency(kit.preco)}" style="float: right; color: var(--rx-green);"></strong>
-                </div>
-            </div>
-            <p th:if="${#lists.isEmpty(report.kitsMaisCaros)}" style="color: var(--text-dim);" th:text="#{reports.no_kits}">Nenhum kit cadastrado.</p>
-        </div>
 
-        <div class="card">
-            <h4 th:text="#{reports.cheapest}">Destaque: Kit(s) de Menor Valor</h4>
-            <div th:if="${not #lists.isEmpty(report.kitsMaisBaratos)}">
-                <div th:each="kit : ${report.kitsMaisBaratos}" style="border-bottom: 1px solid var(--ring); padding: 8px 0;">
-                    <a th:href="@{|/kits/${kit.id}|}" th:text="${kit.modelo}" style="font-weight: 700;"></a>
-                    <strong th:text="${#numbers.formatCurrency(kit.preco)}" style="float: right; color: var(--rx-red);"></strong>
-                </div>
-            </div>
-            <p th:if="${#lists.isEmpty(report.kitsMaisBaratos)}" style="color: var(--text-dim);" th:text="#{reports.no_kits}">Nenhum kit cadastrado.</p>
-        </div>
-    </div>
-</main>
-
-<footer th:replace="~{layout :: body/footer}"></footer>
+    <footer th:replace="~{layout :: body/footer}"></footer>
 </body>
-</html>
 
+</html>

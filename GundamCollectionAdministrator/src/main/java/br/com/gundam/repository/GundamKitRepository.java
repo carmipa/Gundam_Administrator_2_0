@@ -23,4 +23,11 @@ public interface GundamKitRepository
 
     @Query("FROM GundamKit WHERE preco = (SELECT MIN(preco) FROM GundamKit)")
     List<GundamKit> findKitsMaisBaratos();
+
+    // AGREGADORES PARA GRÁFICOS
+    @Query("SELECT k.grade.nome, COUNT(k) FROM GundamKit k GROUP BY k.grade.nome")
+    List<Object[]> countKitsByGrade();
+
+    @Query("SELECT k.universo.sigla, COUNT(k) FROM GundamKit k GROUP BY k.universo.sigla")
+    List<Object[]> countKitsByUniverso();
 }
