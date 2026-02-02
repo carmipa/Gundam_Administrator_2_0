@@ -1,4 +1,4 @@
-# Gundam Collection Administrator
+# Gundam Collection Administrator 2.0
 
 <div align="center">
   <img src="./gundam.png" alt="Gundam Collection Administrator" width="400" />
