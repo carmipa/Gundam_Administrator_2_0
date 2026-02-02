@@ -1,21 +1,21 @@
 create table grade (
-                       id bigserial primary key,
+                       id INTEGER PRIMARY KEY AUTOINCREMENT,
                        nome varchar(50) not null unique
 );
 
 create table escala (
-                        id bigserial primary key,
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
                         rotulo varchar(20) not null unique
 );
 
 create table altura_padrao (
-                               id bigserial primary key,
+                               id INTEGER PRIMARY KEY AUTOINCREMENT,
                                descricao varchar(30) not null unique
 );
 
 -- Tabela principal alinhada às entidades (@Table(name = 'gundam_kits'))
 create table gundam_kits (
-                              id bigserial primary key,
+                              id INTEGER PRIMARY KEY AUTOINCREMENT,
                               modelo varchar(200) not null,
                               fabricante varchar(100) not null default 'Bandai',
                               preco numeric(12,2),
@@ -32,7 +32,7 @@ create table gundam_kits (
                               escala_id bigint references escala(id),
                               altura_padrao_id bigint references altura_padrao(id),
 
-                              created_at timestamp with time zone default now()
+                              created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 create index idx_gundam_kits_modelo on gundam_kits(modelo);

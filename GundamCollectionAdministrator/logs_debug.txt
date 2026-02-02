@@ -1,0 +1,1002 @@
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:25:26.786Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:25:26.789Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:25:27.458Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:25:27.524Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:25:28.145Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:25:28.159Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:25:28.160Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:25:28.198Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:25:28.199Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1373 ms
+app-1  | 2026-02-02T13:25:28.535Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:25:28.635Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@68a305eb
+app-1  | 2026-02-02T13:25:28.636Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:25:28.653Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:25:28.692Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.022s)
+app-1  | 2026-02-02T13:25:28.701Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 2
+app-1  | 2026-02-02T13:25:28.716Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "main" to version "4 - universo and observacao"
+app-1  | 2026-02-02T13:25:28.745Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "main" to version "5 - seed universos"
+app-1  | 2026-02-02T13:25:28.758Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "main", now at version v5 (execution time 00:00.008s)
+app-1  | 2026-02-02T13:25:28.840Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+app-1  | 2026-02-02T13:25:28.893Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+app-1  | 2026-02-02T13:25:28.933Z  INFO 1 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+app-1  | 2026-02-02T13:25:29.227Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+app-1  | 2026-02-02T13:25:29.272Z  INFO 1 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+app-1  | 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+app-1  | 	Database driver: undefined/unknown
+app-1  | 	Database version: 3.49.1
+app-1  | 	Autocommit mode: undefined/unknown
+app-1  | 	Isolation level: undefined/unknown
+app-1  | 	Minimum pool size: undefined/unknown
+app-1  | 	Maximum pool size: undefined/unknown
+app-1  | 2026-02-02T13:25:30.021Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+app-1  | 2026-02-02T13:25:30.045Z ERROR 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:25:30.046Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:25:30.046Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:25:30.067Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:25:30.069Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:25:30.078Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:25:30.091Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 22 common frames omitted
+app-1  | Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateColumnType(AbstractSchemaValidator.java:169) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:156) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:99) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:77) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:289) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	... 26 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:25:31.500Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:25:31.503Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:25:32.127Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:25:32.190Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:25:32.779Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:25:32.799Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:25:32.799Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:25:32.831Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:25:32.832Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1289 ms
+app-1  | 2026-02-02T13:25:33.168Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:25:33.278Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@15d3793b
+app-1  | 2026-02-02T13:25:33.280Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:25:33.301Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:25:33.347Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.027s)
+app-1  | 2026-02-02T13:25:33.355Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 5
+app-1  | 2026-02-02T13:25:33.357Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "main" is up to date. No migration necessary.
+app-1  | 2026-02-02T13:25:33.431Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+app-1  | 2026-02-02T13:25:33.474Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+app-1  | 2026-02-02T13:25:33.507Z  INFO 1 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+app-1  | 2026-02-02T13:25:33.851Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+app-1  | 2026-02-02T13:25:33.905Z  INFO 1 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+app-1  | 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+app-1  | 	Database driver: undefined/unknown
+app-1  | 	Database version: 3.49.1
+app-1  | 	Autocommit mode: undefined/unknown
+app-1  | 	Isolation level: undefined/unknown
+app-1  | 	Minimum pool size: undefined/unknown
+app-1  | 	Maximum pool size: undefined/unknown
+app-1  | 2026-02-02T13:25:34.648Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+app-1  | 2026-02-02T13:25:34.674Z ERROR 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:25:34.675Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:25:34.675Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:25:34.687Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:25:34.689Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:25:34.698Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:25:34.710Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 22 common frames omitted
+app-1  | Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateColumnType(AbstractSchemaValidator.java:169) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:156) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:99) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:77) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:289) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	... 26 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:25:36.200Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:25:36.203Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:25:36.874Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:25:36.939Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:25:37.521Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:25:37.533Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:25:37.533Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:25:37.564Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:25:37.566Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1320 ms
+app-1  | 2026-02-02T13:25:37.895Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:25:37.987Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@37e0056e
+app-1  | 2026-02-02T13:25:37.989Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:25:38.002Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:25:38.036Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.020s)
+app-1  | 2026-02-02T13:25:38.042Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 5
+app-1  | 2026-02-02T13:25:38.046Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "main" is up to date. No migration necessary.
+app-1  | 2026-02-02T13:25:38.115Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+app-1  | 2026-02-02T13:25:38.162Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+app-1  | 2026-02-02T13:25:38.193Z  INFO 1 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+app-1  | 2026-02-02T13:25:38.488Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+app-1  | 2026-02-02T13:25:38.533Z  INFO 1 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+app-1  | 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+app-1  | 	Database driver: undefined/unknown
+app-1  | 	Database version: 3.49.1
+app-1  | 	Autocommit mode: undefined/unknown
+app-1  | 	Isolation level: undefined/unknown
+app-1  | 	Minimum pool size: undefined/unknown
+app-1  | 	Maximum pool size: undefined/unknown
+app-1  | 2026-02-02T13:25:39.240Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+app-1  | 2026-02-02T13:25:39.272Z ERROR 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:25:39.273Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:25:39.273Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:25:39.286Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:25:39.287Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:25:39.296Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:25:39.309Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 22 common frames omitted
+app-1  | Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateColumnType(AbstractSchemaValidator.java:169) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:156) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:99) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:77) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:289) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	... 26 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:25:40.966Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:25:40.969Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:25:41.609Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:25:41.674Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:25:42.333Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:25:42.346Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:25:42.346Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:25:42.387Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:25:42.388Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1381 ms
+app-1  | 2026-02-02T13:25:42.715Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:25:42.809Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@40943a6
+app-1  | 2026-02-02T13:25:42.811Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:25:42.827Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:25:42.862Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.020s)
+app-1  | 2026-02-02T13:25:42.868Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 5
+app-1  | 2026-02-02T13:25:42.871Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "main" is up to date. No migration necessary.
+app-1  | 2026-02-02T13:25:42.937Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+app-1  | 2026-02-02T13:25:42.998Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+app-1  | 2026-02-02T13:25:43.035Z  INFO 1 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+app-1  | 2026-02-02T13:25:43.343Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+app-1  | 2026-02-02T13:25:43.389Z  INFO 1 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+app-1  | 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+app-1  | 	Database driver: undefined/unknown
+app-1  | 	Database version: 3.49.1
+app-1  | 	Autocommit mode: undefined/unknown
+app-1  | 	Isolation level: undefined/unknown
+app-1  | 	Minimum pool size: undefined/unknown
+app-1  | 	Maximum pool size: undefined/unknown
+app-1  | 2026-02-02T13:25:44.072Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+app-1  | 2026-02-02T13:25:44.098Z ERROR 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:25:44.098Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:25:44.099Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:25:44.111Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:25:44.113Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:25:44.122Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:25:44.135Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 22 common frames omitted
+app-1  | Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateColumnType(AbstractSchemaValidator.java:169) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:156) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:99) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:77) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:289) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	... 26 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:25:46.158Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:25:46.161Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:25:46.791Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:25:46.852Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:25:47.439Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:25:47.456Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:25:47.457Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:25:47.495Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:25:47.496Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1296 ms
+app-1  | 2026-02-02T13:25:47.822Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:25:47.924Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@40943a6
+app-1  | 2026-02-02T13:25:47.925Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:25:47.943Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:25:47.984Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.025s)
+app-1  | 2026-02-02T13:25:47.996Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 5
+app-1  | 2026-02-02T13:25:47.999Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "main" is up to date. No migration necessary.
+app-1  | 2026-02-02T13:25:48.076Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+app-1  | 2026-02-02T13:25:48.131Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+app-1  | 2026-02-02T13:25:48.168Z  INFO 1 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+app-1  | 2026-02-02T13:25:48.459Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+app-1  | 2026-02-02T13:25:48.504Z  INFO 1 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+app-1  | 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+app-1  | 	Database driver: undefined/unknown
+app-1  | 	Database version: 3.49.1
+app-1  | 	Autocommit mode: undefined/unknown
+app-1  | 	Isolation level: undefined/unknown
+app-1  | 	Minimum pool size: undefined/unknown
+app-1  | 	Maximum pool size: undefined/unknown
+app-1  | 2026-02-02T13:25:49.168Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+app-1  | 2026-02-02T13:25:49.194Z ERROR 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:25:49.195Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:25:49.195Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:25:49.207Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:25:49.209Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:25:49.218Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:25:49.231Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 22 common frames omitted
+app-1  | Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateColumnType(AbstractSchemaValidator.java:169) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:156) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:99) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:77) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:289) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	... 26 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:25:52.144Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:25:52.147Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:25:52.807Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:25:52.872Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:25:53.485Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:25:53.498Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:25:53.498Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:25:53.533Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:25:53.534Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1345 ms
+app-1  | 2026-02-02T13:25:53.844Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:25:53.949Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@68a305eb
+app-1  | 2026-02-02T13:25:53.950Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:25:53.966Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:25:54.008Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.024s)
+app-1  | 2026-02-02T13:25:54.015Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 5
+app-1  | 2026-02-02T13:25:54.018Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "main" is up to date. No migration necessary.
+app-1  | 2026-02-02T13:25:54.093Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+app-1  | 2026-02-02T13:25:54.139Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+app-1  | 2026-02-02T13:25:54.168Z  INFO 1 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+app-1  | 2026-02-02T13:25:54.463Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+app-1  | 2026-02-02T13:25:54.510Z  INFO 1 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+app-1  | 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+app-1  | 	Database driver: undefined/unknown
+app-1  | 	Database version: 3.49.1
+app-1  | 	Autocommit mode: undefined/unknown
+app-1  | 	Isolation level: undefined/unknown
+app-1  | 	Minimum pool size: undefined/unknown
+app-1  | 	Maximum pool size: undefined/unknown
+app-1  | 2026-02-02T13:25:55.195Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+app-1  | 2026-02-02T13:25:55.221Z ERROR 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:25:55.222Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:25:55.222Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:25:55.234Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:25:55.236Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:25:55.246Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:25:55.258Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 22 common frames omitted
+app-1  | Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateColumnType(AbstractSchemaValidator.java:169) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:156) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:99) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:77) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:289) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	... 26 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:25:59.750Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:25:59.753Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:26:00.413Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:26:00.475Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:26:01.093Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:26:01.108Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:26:01.108Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:26:01.145Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:26:01.146Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1355 ms
+app-1  | 2026-02-02T13:26:01.469Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:26:01.561Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@6f6cc7da
+app-1  | 2026-02-02T13:26:01.562Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:26:01.578Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:26:01.615Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.022s)
+app-1  | 2026-02-02T13:26:01.621Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 5
+app-1  | 2026-02-02T13:26:01.623Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "main" is up to date. No migration necessary.
+app-1  | 2026-02-02T13:26:01.700Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+app-1  | 2026-02-02T13:26:01.772Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+app-1  | 2026-02-02T13:26:01.812Z  INFO 1 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+app-1  | 2026-02-02T13:26:02.116Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+app-1  | 2026-02-02T13:26:02.167Z  INFO 1 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+app-1  | 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+app-1  | 	Database driver: undefined/unknown
+app-1  | 	Database version: 3.49.1
+app-1  | 	Autocommit mode: undefined/unknown
+app-1  | 	Isolation level: undefined/unknown
+app-1  | 	Minimum pool size: undefined/unknown
+app-1  | 	Maximum pool size: undefined/unknown
+app-1  | 2026-02-02T13:26:02.917Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+app-1  | 2026-02-02T13:26:02.948Z ERROR 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:26:02.949Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:26:02.949Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:26:02.961Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:26:02.963Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:26:02.974Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:26:02.987Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 22 common frames omitted
+app-1  | Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateColumnType(AbstractSchemaValidator.java:169) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:156) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:99) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:77) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:289) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	... 26 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:26:10.640Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:26:10.642Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:26:11.286Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:26:11.351Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:26:11.932Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:26:11.942Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:26:11.943Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:26:11.973Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:26:11.975Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1292 ms
+app-1  | 2026-02-02T13:26:12.290Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:26:12.389Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@15d3793b
+app-1  | 2026-02-02T13:26:12.390Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:26:12.406Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:26:12.444Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.023s)
+app-1  | 2026-02-02T13:26:12.450Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 5
+app-1  | 2026-02-02T13:26:12.454Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "main" is up to date. No migration necessary.
+app-1  | 2026-02-02T13:26:12.525Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+app-1  | 2026-02-02T13:26:12.588Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+app-1  | 2026-02-02T13:26:12.623Z  INFO 1 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+app-1  | 2026-02-02T13:26:12.960Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+app-1  | 2026-02-02T13:26:13.017Z  INFO 1 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+app-1  | 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+app-1  | 	Database driver: undefined/unknown
+app-1  | 	Database version: 3.49.1
+app-1  | 	Autocommit mode: undefined/unknown
+app-1  | 	Isolation level: undefined/unknown
+app-1  | 	Minimum pool size: undefined/unknown
+app-1  | 	Maximum pool size: undefined/unknown
+app-1  | 2026-02-02T13:26:13.750Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+app-1  | 2026-02-02T13:26:13.780Z ERROR 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:26:13.781Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:26:13.781Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:26:13.794Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:26:13.796Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:26:13.805Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:26:13.818Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 22 common frames omitted
+app-1  | Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateColumnType(AbstractSchemaValidator.java:169) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:156) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:99) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:77) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:289) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	... 26 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:26:27.929Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:26:27.931Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:26:28.624Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:26:28.687Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:26:29.293Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:26:29.304Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:26:29.305Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:26:29.333Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:26:29.334Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1352 ms
+app-1  | 2026-02-02T13:26:29.635Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:26:29.736Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@6a3fbcb1
+app-1  | 2026-02-02T13:26:29.737Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:26:29.752Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:26:29.792Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.024s)
+app-1  | 2026-02-02T13:26:29.797Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 5
+app-1  | 2026-02-02T13:26:29.801Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "main" is up to date. No migration necessary.
+app-1  | 2026-02-02T13:26:29.871Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+app-1  | 2026-02-02T13:26:29.916Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+app-1  | 2026-02-02T13:26:29.947Z  INFO 1 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+app-1  | 2026-02-02T13:26:30.276Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+app-1  | 2026-02-02T13:26:30.325Z  INFO 1 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+app-1  | 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+app-1  | 	Database driver: undefined/unknown
+app-1  | 	Database version: 3.49.1
+app-1  | 	Autocommit mode: undefined/unknown
+app-1  | 	Isolation level: undefined/unknown
+app-1  | 	Minimum pool size: undefined/unknown
+app-1  | 	Maximum pool size: undefined/unknown
+app-1  | 2026-02-02T13:26:31.062Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+app-1  | 2026-02-02T13:26:31.088Z ERROR 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:26:31.089Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:26:31.089Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:26:31.102Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:26:31.103Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:26:31.113Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:26:31.126Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 22 common frames omitted
+app-1  | Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateColumnType(AbstractSchemaValidator.java:169) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:156) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:99) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:77) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:289) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	... 26 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:26:58.075Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:26:58.078Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:26:58.702Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:26:58.763Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:26:59.382Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:26:59.398Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:26:59.398Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:26:59.432Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:26:59.433Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1317 ms
+app-1  | 2026-02-02T13:26:59.739Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:26:59.851Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@35787726
+app-1  | 2026-02-02T13:26:59.853Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:26:59.868Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:26:59.904Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.020s)
+app-1  | 2026-02-02T13:26:59.911Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 5
+app-1  | 2026-02-02T13:26:59.915Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "main" is up to date. No migration necessary.
+app-1  | 2026-02-02T13:26:59.987Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+app-1  | 2026-02-02T13:27:00.053Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+app-1  | 2026-02-02T13:27:00.091Z  INFO 1 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+app-1  | 2026-02-02T13:27:00.398Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+app-1  | 2026-02-02T13:27:00.450Z  INFO 1 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+app-1  | 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+app-1  | 	Database driver: undefined/unknown
+app-1  | 	Database version: 3.49.1
+app-1  | 	Autocommit mode: undefined/unknown
+app-1  | 	Isolation level: undefined/unknown
+app-1  | 	Minimum pool size: undefined/unknown
+app-1  | 	Maximum pool size: undefined/unknown
+app-1  | 2026-02-02T13:27:01.172Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+app-1  | 2026-02-02T13:27:01.198Z ERROR 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:27:01.198Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 2026-02-02T13:27:01.198Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:27:01.210Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:27:01.212Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:27:01.222Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:27:01.234Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 22 common frames omitted
+app-1  | Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [altura_padrao]; found [integer (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateColumnType(AbstractSchemaValidator.java:169) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:156) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:99) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:77) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:289) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
+app-1  | 	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.29.Final.jar!/:6.6.29.Final]
+app-1  | 	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar!/:6.2.11]
+app-1  | 	... 26 common frames omitted
+app-1  | 

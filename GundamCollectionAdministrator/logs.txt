@@ -1,0 +1,1228 @@
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:23:29.399Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:23:29.401Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:23:30.036Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:23:30.099Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:23:30.668Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:23:30.684Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:23:30.685Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:23:30.719Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:23:30.720Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1280 ms
+app-1  | 2026-02-02T13:23:31.036Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:23:31.146Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@68a305eb
+app-1  | 2026-02-02T13:23:31.148Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:23:31.164Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:23:31.202Z  INFO 1 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "main"."flyway_schema_history" does not exist yet
+app-1  | 2026-02-02T13:23:31.204Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.014s)
+app-1  | 2026-02-02T13:23:31.209Z  INFO 1 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "main"."flyway_schema_history" ...
+app-1  | 2026-02-02T13:23:31.242Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": << Empty Schema >>
+app-1  | 2026-02-02T13:23:31.249Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "main" to version "1 - create tables"
+app-1  | 2026-02-02T13:23:31.271Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "main" to version "2 - seed reference data"
+app-1  | 2026-02-02T13:23:31.281Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "main" to version "4 - universo and observacao"
+app-1  | 2026-02-02T13:23:31.296Z ERROR 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migration of schema "main" to version "4 - universo and observacao" failed! Changes successfully rolled back.
+app-1  | 2026-02-02T13:23:31.299Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 2026-02-02T13:23:31.299Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:23:31.319Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:23:31.321Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:23:31.330Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:23:31.343Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 17 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.exception.FlywayMigrateException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:399) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:283) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:282) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:255) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate$1.call(TableLockingExecutionTemplate.java:40) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate.execute(TableLockingExecutionTemplate.java:35) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.base.Connection.lock(Connection.java:106) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:164) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:104) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.lambda$migrate$1(Flyway.java:247) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:210) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.migrate(Flyway.java:188) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 24 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:256) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:217) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:137) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:75) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:66) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:31) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:65) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:391) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 42 common frames omitted
+app-1  | Caused by: org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.throwex(DB.java:1150) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare_utf8(Native Method) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare(NativeDB.java:135) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.prepare(DB.java:264) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.lambda$execute$0(JDBC3Statement.java:55) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.withConnectionTimeout(JDBC3Statement.java:458) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.execute(JDBC3Statement.java:44) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:215) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:88) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:212) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 48 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:23:32.774Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:23:32.777Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:23:33.416Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:23:33.481Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:23:34.078Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:23:34.092Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:23:34.092Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:23:34.131Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:23:34.132Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1314 ms
+app-1  | 2026-02-02T13:23:34.436Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:23:34.534Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@4a70d302
+app-1  | 2026-02-02T13:23:34.536Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:23:34.551Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:23:34.589Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.022s)
+app-1  | 2026-02-02T13:23:34.594Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 2
+app-1  | 2026-02-02T13:23:34.606Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "main" to version "4 - universo and observacao"
+app-1  | 2026-02-02T13:23:34.622Z ERROR 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migration of schema "main" to version "4 - universo and observacao" failed! Changes successfully rolled back.
+app-1  | 2026-02-02T13:23:34.625Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 2026-02-02T13:23:34.626Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:23:34.630Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:23:34.633Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:23:34.642Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:23:34.654Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 17 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.exception.FlywayMigrateException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:399) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:283) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:282) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:255) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate$1.call(TableLockingExecutionTemplate.java:40) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate.execute(TableLockingExecutionTemplate.java:35) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.base.Connection.lock(Connection.java:106) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:164) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:104) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.lambda$migrate$1(Flyway.java:247) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:210) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.migrate(Flyway.java:188) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 24 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:256) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:217) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:137) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:75) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:66) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:31) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:65) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:391) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 42 common frames omitted
+app-1  | Caused by: org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.throwex(DB.java:1150) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare_utf8(Native Method) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare(NativeDB.java:135) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.prepare(DB.java:264) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.lambda$execute$0(JDBC3Statement.java:55) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.withConnectionTimeout(JDBC3Statement.java:458) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.execute(JDBC3Statement.java:44) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:215) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:88) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:212) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 48 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:23:36.078Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:23:36.081Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:23:36.718Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:23:36.779Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:23:37.362Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:23:37.378Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:23:37.378Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:23:37.413Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:23:37.414Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1294 ms
+app-1  | 2026-02-02T13:23:37.761Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:23:37.870Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@4665428b
+app-1  | 2026-02-02T13:23:37.872Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:23:37.889Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:23:37.930Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.024s)
+app-1  | 2026-02-02T13:23:37.935Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 2
+app-1  | 2026-02-02T13:23:37.950Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "main" to version "4 - universo and observacao"
+app-1  | 2026-02-02T13:23:37.967Z ERROR 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migration of schema "main" to version "4 - universo and observacao" failed! Changes successfully rolled back.
+app-1  | 2026-02-02T13:23:37.970Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 2026-02-02T13:23:37.970Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:23:37.975Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:23:37.977Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:23:37.987Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:23:38.001Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 17 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.exception.FlywayMigrateException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:399) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:283) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:282) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:255) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate$1.call(TableLockingExecutionTemplate.java:40) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate.execute(TableLockingExecutionTemplate.java:35) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.base.Connection.lock(Connection.java:106) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:164) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:104) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.lambda$migrate$1(Flyway.java:247) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:210) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.migrate(Flyway.java:188) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 24 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:256) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:217) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:137) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:75) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:66) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:31) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:65) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:391) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 42 common frames omitted
+app-1  | Caused by: org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.throwex(DB.java:1150) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare_utf8(Native Method) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare(NativeDB.java:135) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.prepare(DB.java:264) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.lambda$execute$0(JDBC3Statement.java:55) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.withConnectionTimeout(JDBC3Statement.java:458) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.execute(JDBC3Statement.java:44) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:215) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:88) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:212) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 48 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:23:39.710Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:23:39.713Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:23:40.369Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:23:40.435Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:23:41.072Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:23:41.088Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:23:41.088Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:23:41.120Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:23:41.121Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1369 ms
+app-1  | 2026-02-02T13:23:41.420Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:23:41.525Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@35787726
+app-1  | 2026-02-02T13:23:41.526Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:23:41.542Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:23:41.586Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.026s)
+app-1  | 2026-02-02T13:23:41.594Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 2
+app-1  | 2026-02-02T13:23:41.606Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "main" to version "4 - universo and observacao"
+app-1  | 2026-02-02T13:23:41.623Z ERROR 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migration of schema "main" to version "4 - universo and observacao" failed! Changes successfully rolled back.
+app-1  | 2026-02-02T13:23:41.627Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 2026-02-02T13:23:41.628Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:23:41.677Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:23:41.680Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:23:41.689Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:23:41.701Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 17 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.exception.FlywayMigrateException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:399) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:283) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:282) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:255) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate$1.call(TableLockingExecutionTemplate.java:40) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate.execute(TableLockingExecutionTemplate.java:35) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.base.Connection.lock(Connection.java:106) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:164) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:104) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.lambda$migrate$1(Flyway.java:247) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:210) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.migrate(Flyway.java:188) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 24 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:256) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:217) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:137) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:75) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:66) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:31) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:65) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:391) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 42 common frames omitted
+app-1  | Caused by: org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.throwex(DB.java:1150) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare_utf8(Native Method) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare(NativeDB.java:135) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.prepare(DB.java:264) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.lambda$execute$0(JDBC3Statement.java:55) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.withConnectionTimeout(JDBC3Statement.java:458) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.execute(JDBC3Statement.java:44) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:215) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:88) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:212) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 48 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:23:43.693Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:23:43.696Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:23:44.314Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:23:44.373Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:23:44.959Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:23:44.972Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:23:44.973Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:23:45.005Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:23:45.006Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1272 ms
+app-1  | 2026-02-02T13:23:45.328Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:23:45.438Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@4a70d302
+app-1  | 2026-02-02T13:23:45.441Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:23:45.456Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:23:45.497Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.024s)
+app-1  | 2026-02-02T13:23:45.503Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 2
+app-1  | 2026-02-02T13:23:45.515Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "main" to version "4 - universo and observacao"
+app-1  | 2026-02-02T13:23:45.533Z ERROR 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migration of schema "main" to version "4 - universo and observacao" failed! Changes successfully rolled back.
+app-1  | 2026-02-02T13:23:45.537Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 2026-02-02T13:23:45.537Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:23:45.544Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:23:45.546Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:23:45.556Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:23:45.570Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 17 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.exception.FlywayMigrateException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:399) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:283) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:282) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:255) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate$1.call(TableLockingExecutionTemplate.java:40) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate.execute(TableLockingExecutionTemplate.java:35) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.base.Connection.lock(Connection.java:106) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:164) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:104) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.lambda$migrate$1(Flyway.java:247) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:210) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.migrate(Flyway.java:188) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 24 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:256) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:217) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:137) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:75) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:66) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:31) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:65) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:391) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 42 common frames omitted
+app-1  | Caused by: org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.throwex(DB.java:1150) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare_utf8(Native Method) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare(NativeDB.java:135) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.prepare(DB.java:264) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.lambda$execute$0(JDBC3Statement.java:55) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.withConnectionTimeout(JDBC3Statement.java:458) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.execute(JDBC3Statement.java:44) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:215) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:88) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:212) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 48 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:23:48.490Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:23:48.492Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:23:49.139Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:23:49.203Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:23:49.808Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:23:49.821Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:23:49.822Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:23:49.854Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:23:49.855Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1325 ms
+app-1  | 2026-02-02T13:23:50.177Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:23:50.282Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@42679fc2
+app-1  | 2026-02-02T13:23:50.283Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:23:50.299Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:23:50.342Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.024s)
+app-1  | 2026-02-02T13:23:50.348Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 2
+app-1  | 2026-02-02T13:23:50.359Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "main" to version "4 - universo and observacao"
+app-1  | 2026-02-02T13:23:50.374Z ERROR 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migration of schema "main" to version "4 - universo and observacao" failed! Changes successfully rolled back.
+app-1  | 2026-02-02T13:23:50.378Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 2026-02-02T13:23:50.378Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:23:50.383Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:23:50.385Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:23:50.394Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:23:50.406Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 17 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.exception.FlywayMigrateException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:399) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:283) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:282) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:255) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate$1.call(TableLockingExecutionTemplate.java:40) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate.execute(TableLockingExecutionTemplate.java:35) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.base.Connection.lock(Connection.java:106) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:164) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:104) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.lambda$migrate$1(Flyway.java:247) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:210) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.migrate(Flyway.java:188) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 24 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:256) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:217) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:137) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:75) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:66) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:31) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:65) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:391) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 42 common frames omitted
+app-1  | Caused by: org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.throwex(DB.java:1150) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare_utf8(Native Method) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare(NativeDB.java:135) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.prepare(DB.java:264) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.lambda$execute$0(JDBC3Statement.java:55) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.withConnectionTimeout(JDBC3Statement.java:458) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.execute(JDBC3Statement.java:44) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:215) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:88) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:212) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 48 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:23:54.968Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:23:54.970Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:23:55.621Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:23:55.684Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:23:56.336Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:23:56.353Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:23:56.354Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:23:56.388Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:23:56.389Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1378 ms
+app-1  | 2026-02-02T13:23:56.709Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:23:56.815Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@3375ebd3
+app-1  | 2026-02-02T13:23:56.816Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:23:56.834Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:23:56.875Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.021s)
+app-1  | 2026-02-02T13:23:56.880Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 2
+app-1  | 2026-02-02T13:23:56.892Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "main" to version "4 - universo and observacao"
+app-1  | 2026-02-02T13:23:56.906Z ERROR 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migration of schema "main" to version "4 - universo and observacao" failed! Changes successfully rolled back.
+app-1  | 2026-02-02T13:23:56.910Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 2026-02-02T13:23:56.910Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:23:56.915Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:23:56.917Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:23:56.926Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:23:56.939Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 17 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.exception.FlywayMigrateException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:399) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:283) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:282) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:255) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate$1.call(TableLockingExecutionTemplate.java:40) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate.execute(TableLockingExecutionTemplate.java:35) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.base.Connection.lock(Connection.java:106) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:164) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:104) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.lambda$migrate$1(Flyway.java:247) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:210) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.migrate(Flyway.java:188) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 24 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:256) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:217) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:137) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:75) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:66) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:31) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:65) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:391) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 42 common frames omitted
+app-1  | Caused by: org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.throwex(DB.java:1150) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare_utf8(Native Method) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare(NativeDB.java:135) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.prepare(DB.java:264) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.lambda$execute$0(JDBC3Statement.java:55) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.withConnectionTimeout(JDBC3Statement.java:458) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.execute(JDBC3Statement.java:44) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:215) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:88) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:212) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 48 common frames omitted
+app-1  | 
+app-1  | 
+app-1  |   .   ____          _            __ _ _
+app-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1  |  =========|_|==============|___/=/_/_/_/
+app-1  | 
+app-1  |  :: Spring Boot ::                (v3.5.6)
+app-1  | 
+app-1  | 2026-02-02T13:24:04.564Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : Starting GundamApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+app-1  | 2026-02-02T13:24:04.566Z  INFO 1 --- [           main] br.com.gundam.GundamApplication          : No active profile set, falling back to 1 default profile: "default"
+app-1  | 2026-02-02T13:24:05.196Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app-1  | 2026-02-02T13:24:05.259Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 7 JPA repository interfaces.
+app-1  | 2026-02-02T13:24:05.833Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+app-1  | 2026-02-02T13:24:05.844Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app-1  | 2026-02-02T13:24:05.844Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+app-1  | 2026-02-02T13:24:05.872Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app-1  | 2026-02-02T13:24:05.874Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1269 ms
+app-1  | 2026-02-02T13:24:06.173Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app-1  | 2026-02-02T13:24:06.262Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@68a305eb
+app-1  | 2026-02-02T13:24:06.263Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app-1  | 2026-02-02T13:24:06.280Z  INFO 1 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlite:/app/data/gundam.db?journal_mode=WAL (SQLite 3.49)
+app-1  | 2026-02-02T13:24:06.319Z  INFO 1 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.024s)
+app-1  | 2026-02-02T13:24:06.324Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "main": 2
+app-1  | 2026-02-02T13:24:06.336Z  INFO 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "main" to version "4 - universo and observacao"
+app-1  | 2026-02-02T13:24:06.353Z ERROR 1 --- [           main] o.f.core.internal.command.DbMigrate      : Migration of schema "main" to version "4 - universo and observacao" failed! Changes successfully rolled back.
+app-1  | 2026-02-02T13:24:06.356Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 2026-02-02T13:24:06.356Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+app-1  | 2026-02-02T13:24:06.361Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+app-1  | 2026-02-02T13:24:06.363Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+app-1  | 2026-02-02T13:24:06.373Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+app-1  | 
+app-1  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+app-1  | 2026-02-02T13:24:06.387Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+app-1  | 
+app-1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar!/:3.5.6]
+app-1  | 	at br.com.gundam.GundamApplication.main(GundamApplication.java:15) ~[!/:0.0.1-SNAPSHOT]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+app-1  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+app-1  | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 17 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.exception.FlywayMigrateException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:399) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:283) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:282) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:255) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate$1.call(TableLockingExecutionTemplate.java:40) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate.execute(TableLockingExecutionTemplate.java:35) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.base.Connection.lock(Connection.java:106) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:164) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:153) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:104) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.lambda$migrate$1(Flyway.java:247) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:210) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.Flyway.migrate(Flyway.java:188) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.5.6.jar!/:3.5.6]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar!/:6.2.11]
+app-1  | 	... 24 common frames omitted
+app-1  | Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Script V4__universo_and_observacao.sql failed
+app-1  | ---------------------------------------------
+app-1  | SQL State  : null
+app-1  | Error Code : 1
+app-1  | Message    : [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | Location   : db/migration/V4__universo_and_observacao.sql (/app/nested:/app/app.jar/!BOOT-INF/classes/!/db/migration/V4__universo_and_observacao.sql)
+app-1  | Line       : 9
+app-1  | Statement  : Run Flyway with -X option to see the actual statement causing the problem
+app-1  | 
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:256) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:217) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:137) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:75) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:66) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:31) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:65) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:391) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 42 common frames omitted
+app-1  | Caused by: org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "exists": syntax error)
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.throwex(DB.java:1150) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare_utf8(Native Method) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.NativeDB.prepare(NativeDB.java:135) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.core.DB.prepare(DB.java:264) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.lambda$execute$0(JDBC3Statement.java:55) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.withConnectionTimeout(JDBC3Statement.java:458) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at org.sqlite.jdbc3.JDBC3Statement.execute(JDBC3Statement.java:44) ~[sqlite-jdbc-3.49.1.0.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.3.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:215) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:88) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:212) ~[flyway-core-11.7.2.jar!/:na]
+app-1  | 	... 48 common frames omitted
+app-1  | 

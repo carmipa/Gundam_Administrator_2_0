@@ -1,0 +1,13 @@
+{
+    "mcpServers": {
+        "sqlite": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-sqlite",
+                "--file",
+                "g:\\PROJETOS-OPEN\\projeto-gundam\\Gundam_Administrator_2_0\\GundamCollectionAdministrator\\database\\gundam.db"
+            ]
+        }
+    }
+}
