@@ -43,7 +43,7 @@ public class GundamKitController {
             Model model) {
 
         Pageable pageable = PageRequest.of(page, size);
-        logger.info("🔍 Listing kits. Model: {}, Grade: {}, Universe: {}, Page: {}", modelo, gradeId, universeId, page);
+        logger.info("Listing kits. Model: {}, Grade: {}, Universe: {}, Page: {}", modelo, gradeId, universeId, page);
         Page<GundamKit> p = svc.search(modelo, gradeId, universoId, de, ate, pageable);
 
         model.addAttribute("page", p);
@@ -102,7 +102,7 @@ public class GundamKitController {
     /* ===================== DETALHES ===================== */
     @GetMapping("/{id}")
     public String detalhes(@PathVariable Long id, Model model) {
-        logger.info("👀 Viewing details for kit ID: {}", id);
+        logger.info("Viewing details for kit ID: {}", id);
         model.addAttribute("kit", svc.getById(id));
         model.addAttribute("pageName", "kits");
         return "kits/details";

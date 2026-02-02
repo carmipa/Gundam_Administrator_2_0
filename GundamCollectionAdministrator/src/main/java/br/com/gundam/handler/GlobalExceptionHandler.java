@@ -18,7 +18,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(GundamResourceNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public String handleResourceNotFound(GundamResourceNotFoundException ex, Model model) {
-        logger.error("🛑 Resource Not Found: {}", ex.getMessage());
+        logger.error("Resource Not Found: {}", ex.getMessage());
         model.addAttribute("errorCode", "404");
         model.addAttribute("errorMessage", ex.getMessage());
         return "error/404";
@@ -27,7 +27,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(GundamStorageException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public String handleStorageException(GundamStorageException ex, Model model) {
-        logger.error("🔥 Storage Error: {}", ex.getMessage(), ex);
+        logger.error("Storage Error: {}", ex.getMessage(), ex);
         model.addAttribute("errorCode", "500");
         model.addAttribute("errorMessage", "Erro de Armazenamento: " + ex.getMessage());
         return "error/error";
@@ -36,7 +36,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(org.springframework.dao.DataAccessException.class)
     @ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
     public String handleDatabaseException(org.springframework.dao.DataAccessException ex, Model model) {
-        logger.error("🔌 Falha de Conexão com Banco de Dados: {}", ex.getMessage(), ex);
+        logger.error("Database Connection Failure: {}", ex.getMessage(), ex);
         model.addAttribute("errorCode", "503");
         model.addAttribute("errorMessage",
                 "Serviço indisponível temporariamente. Verifique a conexão com o banco de dados.");
@@ -46,7 +46,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public String handleGenericException(Exception ex, Model model) {
-        logger.error("💥 Unexpected Error: {}", ex.getMessage(), ex);
+        logger.error("Unexpected Error: {}", ex.getMessage(), ex);
         model.addAttribute("errorCode", "500");
         model.addAttribute("errorMessage", "Ocorreu um erro inesperado no sistema Gundam.");
         return "error/error";

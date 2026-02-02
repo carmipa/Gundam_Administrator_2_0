@@ -68,13 +68,13 @@ public class GundamKitService {
 
     @CacheEvict(value = { "kit_by_id" }, allEntries = true)
     public GundamKit save(GundamKit g) {
-        logger.info("💾 Saving kit: {}", g.getModelo());
+        logger.info("Saving kit: {}", g.getModelo());
         return kits.save(g);
     }
 
     @CacheEvict(value = { "kit_by_id" }, allEntries = true)
     public void deleteById(Long id) {
-        logger.warn("🗑️ Deleting kit ID: {}", id);
+        logger.warn("Deleting kit ID: {}", id);
         kits.deleteById(id);
     }
 
