@@ -36,12 +36,23 @@ public class GundamKitController {
             @RequestParam(value = "universoId", required = false) Long universoId,
             @RequestParam(value = "de", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate de,
             @RequestParam(value = "ate", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate ate,
+            @RequestParam(value = "sort", defaultValue = "modelo") String sortField,
+            @RequestParam(value = "dir", defaultValue = "asc") String sortDir,
             @RequestParam(value = "page", defaultValue = "0") int page,
             @RequestParam(value = "size", defaultValue = "10") int size,
             Model model) {
 
-        Pageable pageable = PageRequest.of(page, size);
+        org.springframework.data.domain.Sort sort = sortDir.equalsIgnoreCase("asc")
+                ? org.springframework.data.domain.Sort.by(sortField).ascending()
+                : org.springframework.data.domain.Sort.by(sortField).descending();
+
+        Pageable pageable = PageRequest.of(page, size, sort);
+
         Page<GundamKit> p = svc.search(modelo, gradeId, universoId, de, ate, pageable);
+
+        model.addAttribute("sortField", sortField);
+        model.addAttribute("sortDir", sortDir);
+        model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
 
         model.addAttribute("page", p);
         model.addAttribute("fModelo", modelo);

@@ -1,71 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org" th:with="pageTitle='Gerenciador da Coleção'">
+
 <head th:replace="~{layout :: head}"></head>
+
 <body class="rx78-theme">
-<header th:replace="~{layout :: body/header}"></header>
+    <header th:replace="~{layout :: body/header}"></header>
 
-<main class="container">
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
-        <h2 th:text="#{list.title}">Kits</h2>
-        <a class="btn btn-yellow" th:href="@{/kits/novo}" th:text="#{list.new_kit}">+ Novo Kit</a>
-    </div>
+    <main class="container">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+            <h2 th:text="#{list.title}">Kits</h2>
+            <a class="btn btn-yellow" th:href="@{/kits/novo}" th:text="#{list.new_kit}">+ Novo Kit</a>
+        </div>
 
-    <section class="filters">
-        <form method="get" th:action="@{/kits}">
-            <input type="text" name="modelo" th:placeholder="#{list.filter.model}" th:value="${fModelo}" class="input">
-            <select name="gradeId" class="input">
-                <option value="" th:text="#{list.filter.grade}">Todas as Grades</option>
-                <option th:each="g : ${grades}" th:value="${g.id}" th:text="${g.nome}" th:selected="${fGradeId != null and fGradeId == g.id}"></option>
-            </select>
-            <select name="universoId" class="input">
-                <option value="" th:text="#{list.filter.universe}">Todos os Universos</option>
-                <option th:each="u : ${universos}" th:value="${u.id}" th:text="${u.sigla}" th:selected="${fUniversoId != null and fUniversoId == u.id}"></option>
-            </select>
-            <input type="date" name="de" th:value="${fDe}" class="input" th:placeholder="#{list.filter.from}">
-            <input type="date" name="ate" th:value="${fAte}" class="input" th:placeholder="#{list.filter.to}">
-            <button class="btn btn-blue" type="submit" th:text="#{list.filter.apply}">Filtrar</button>
-        </form>
-    </section>
+        <section class="filters">
+            <form method="get" th:action="@{/kits}">
+                <input type="text" name="modelo" th:placeholder="#{list.filter.model}" th:value="${fModelo}"
+                    class="input">
+                <select name="gradeId" class="input">
+                    <option value="" th:text="#{list.filter.grade}">Todas as Grades</option>
+                    <option th:each="g : ${grades}" th:value="${g.id}" th:text="${g.nome}"
+                        th:selected="${fGradeId != null and fGradeId == g.id}"></option>
+                </select>
+                <select name="universoId" class="input">
+                    <option value="" th:text="#{list.filter.universe}">Todos os Universos</option>
+                    <option th:each="u : ${universos}" th:value="${u.id}" th:text="${u.sigla}"
+                        th:selected="${fUniversoId != null and fUniversoId == u.id}"></option>
+                </select>
+                <input type="date" name="de" th:value="${fDe}" class="input" th:placeholder="#{list.filter.from}">
+                <input type="date" name="ate" th:value="${fAte}" class="input" th:placeholder="#{list.filter.to}">
+                <button class="btn btn-blue" type="submit" th:text="#{list.filter.apply}">Filtrar</button>
+            </form>
+        </section>
 
-    <div class="badges" style="justify-content: start; margin-bottom: 1.5rem;">
-        <span class="badge" th:text="#{list.total(${page.totalElements})}">Total: 0</span>
-        <span class="badge" th:text="#{list.page_info(${page.number + 1}, ${page.totalPages})}">Página 1 de 1</span>
-    </div>
+        <div class="badges" style="justify-content: start; margin-bottom: 1.5rem;">
+            <span class="badge" th:text="#{list.total(${page.totalElements})}">Total: 0</span>
+            <span class="badge" th:text="#{list.page_info(${page.number + 1}, ${page.totalPages})}">Página 1 de 1</span>
+        </div>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th th:text="#{list.table.id}">ID</th>
-            <th th:text="#{list.table.model}">Modelo</th>
-            <th th:text="#{list.table.grade}">Grade</th>
-            <th th:text="#{list.table.price}">Preço</th>
-            <th th:text="#{list.table.date}">Data da Compra</th>
-            <th th:text="#{list.table.actions}">Ações</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="kit : ${page.content}">
-            <td th:text="${kit.id}">1</td>
-            <td th:text="${kit.modelo}">RX-78-2</td>
-            <td th:text="${kit.grade != null ? kit.grade.nome : '-'}">MG</td>
-            <td th:text="${'R$ ' + #numbers.formatDecimal(kit.preco, 1, 'POINT', 2, 'COMMA')}">R$ 0,00</td>
-            <td th:text="${kit.dataCompra != null ? #temporals.format(kit.dataCompra, 'dd/MM/yyyy') : '-'}">01/01/2025</td>
-            <td class="actions">
-                <a th:href="@{|/kits/${kit.id}|}" class="btn btn-yellow btn-sm" th:text="#{list.actions.details}">Detalhes</a>
-                <a th:href="@{|/kits/${kit.id}/editar|}" class="btn btn-blue btn-sm" th:text="#{list.actions.edit}">Editar</a>
-                <form th:action="@{|/kits/${kit.id}/deletar|}" method="post" onsubmit="return confirm('Confirmar exclusão desta unidade?');">
-                    <button class="btn btn-red btn-sm" type="submit" th:text="#{list.actions.delete}">Excluir</button>
-                </form>
-            </td>
-        </tr>
-        <tr th:if="${page.empty}">
-            <td colspan="6" style="text-align: center; padding: 2rem;" th:text="#{list.empty}">Nenhum kit encontrado.</td>
-        </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <a th:href="@{/kits(page=0, size=${page.size}, sort='id', dir=${sortField == 'id' ? reverseSortDir : 'asc'}, modelo=${fModelo}, gradeId=${fGradeId}, universoId=${fUniversoId}, de=${fDe}, ate=${fAte})}"
+                            th:text="#{list.table.id}">ID</a>
+                        <span th:if="${sortField == 'id'}" th:text="${sortDir == 'asc' ? '▲' : '▼'}"></span>
+                    </th>
+                    <th>
+                        <a th:href="@{/kits(page=0, size=${page.size}, sort='modelo', dir=${sortField == 'modelo' ? reverseSortDir : 'asc'}, modelo=${fModelo}, gradeId=${fGradeId}, universoId=${fUniversoId}, de=${fDe}, ate=${fAte})}"
+                            th:text="#{list.table.model}">Modelo</a>
+                        <span th:if="${sortField == 'modelo'}" th:text="${sortDir == 'asc' ? '▲' : '▼'}"></span>
+                    </th>
+                    <th>
+                        <a th:href="@{/kits(page=0, size=${page.size}, sort='grade.nome', dir=${sortField == 'grade.nome' ? reverseSortDir : 'asc'}, modelo=${fModelo}, gradeId=${fGradeId}, universoId=${fUniversoId}, de=${fDe}, ate=${fAte})}"
+                            th:text="#{list.table.grade}">Grade</a>
+                        <span th:if="${sortField == 'grade.nome'}" th:text="${sortDir == 'asc' ? '▲' : '▼'}"></span>
+                    </th>
+                    <th>
+                        <a th:href="@{/kits(page=0, size=${page.size}, sort='preco', dir=${sortField == 'preco' ? reverseSortDir : 'asc'}, modelo=${fModelo}, gradeId=${fGradeId}, universoId=${fUniversoId}, de=${fDe}, ate=${fAte})}"
+                            th:text="#{list.table.price}">Preço</a>
+                        <span th:if="${sortField == 'preco'}" th:text="${sortDir == 'asc' ? '▲' : '▼'}"></span>
+                    </th>
+                    <th>
+                        <a th:href="@{/kits(page=0, size=${page.size}, sort='dataCompra', dir=${sortField == 'dataCompra' ? reverseSortDir : 'asc'}, modelo=${fModelo}, gradeId=${fGradeId}, universoId=${fUniversoId}, de=${fDe}, ate=${fAte})}"
+                            th:text="#{list.table.date}">Data da Compra</a>
+                        <span th:if="${sortField == 'dataCompra'}" th:text="${sortDir == 'asc' ? '▲' : '▼'}"></span>
+                    </th>
+                    <th th:text="#{list.table.actions}">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="kit : ${page.content}">
+                    <td th:text="${kit.id}">1</td>
+                    <td th:text="${kit.modelo}">RX-78-2</td>
+                    <td th:text="${kit.grade != null ? kit.grade.nome : '-'}">MG</td>
+                    <td th:text="${'R$ ' + #numbers.formatDecimal(kit.preco, 1, 'POINT', 2, 'COMMA')}">R$ 0,00</td>
+                    <td th:text="${kit.dataCompra != null ? #temporals.format(kit.dataCompra, 'dd/MM/yyyy') : '-'}">
+                        01/01/2025</td>
+                    <td class="actions">
+                        <a th:href="@{|/kits/${kit.id}|}" class="btn btn-yellow btn-sm"
+                            th:text="#{list.actions.details}">Detalhes</a>
+                        <a th:href="@{|/kits/${kit.id}/editar|}" class="btn btn-blue btn-sm"
+                            th:text="#{list.actions.edit}">Editar</a>
+                        <form th:action="@{|/kits/${kit.id}/deletar|}" method="post"
+                            onsubmit="return confirm('Confirmar exclusão desta unidade?');">
+                            <button class="btn btn-red btn-sm" type="submit"
+                                th:text="#{list.actions.delete}">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr th:if="${page.empty}">
+                    <td colspan="6" style="text-align: center; padding: 2rem;" th:text="#{list.empty}">Nenhum kit
+                        encontrado.</td>
+                </tr>
+            </tbody>
+        </table>
 
-</main>
+        <!-- PAGINATION -->
+        <div class="pagination" style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem;"
+            th:if="${page.totalPages > 1}">
+            <a th:if="${page.hasPrevious()}"
+                th:href="@{/kits(page=${page.number - 1}, size=${page.size}, sort=${sortField}, dir=${sortDir}, modelo=${fModelo}, gradeId=${fGradeId}, universoId=${fUniversoId}, de=${fDe}, ate=${fAte})}"
+                class="btn btn-outline btn-sm">&laquo; Anterior</a>
 
-<footer th:replace="~{layout :: body/footer}"></footer>
+            <span th:each="i : ${#numbers.sequence(0, page.totalPages - 1)}">
+                <a th:href="@{/kits(page=${i}, size=${page.size}, sort=${sortField}, dir=${sortDir}, modelo=${fModelo}, gradeId=${fGradeId}, universoId=${fUniversoId}, de=${fDe}, ate=${fAte})}"
+                    th:text="${i + 1}"
+                    th:classappend="${page.number == i} ? 'btn btn-yellow btn-sm' : 'btn btn-outline btn-sm'"
+                    class="btn btn-sm">1</a>
+            </span>
+
+            <a th:if="${page.hasNext()}"
+                th:href="@{/kits(page=${page.number + 1}, size=${page.size}, sort=${sortField}, dir=${sortDir}, modelo=${fModelo}, gradeId=${fGradeId}, universoId=${fUniversoId}, de=${fDe}, ate=${fAte})}"
+                class="btn btn-outline btn-sm">Próximo &raquo;</a>
+        </div>
+
+    </main>
+
+    <footer th:replace="~{layout :: body/footer}"></footer>
 </body>
+
 </html>
