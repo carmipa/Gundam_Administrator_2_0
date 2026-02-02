@@ -30,4 +30,7 @@ public interface GundamKitRepository
 
     @Query("SELECT k.universo.sigla, COUNT(k) FROM GundamKit k GROUP BY k.universo.sigla")
     List<Object[]> countKitsByUniverso();
+
+    @Query("SELECT k.grade.nome, SUM(k.preco) FROM GundamKit k GROUP BY k.grade.nome")
+    List<Object[]> sumCostByGrade();
 }

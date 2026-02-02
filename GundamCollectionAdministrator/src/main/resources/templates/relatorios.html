@@ -79,14 +79,24 @@
             // DADOS DO BACKEND (Thymeleaf injeta aqui)
             const gradesData = /*[[${report.kitsPorGrade}]]*/[];
             const universosData = /*[[${report.kitsPorUniverso}]]*/[];
+            const costData = /*[[${report.custoPorGrade}]]*/[];
+            const evolutionMap = /*[[${report.evolutionData}]]*/ {};
 
-            // PROCESSAMENTO DE DADOS (Grade)
+            // PROCESSAMENTO DE DADOS (Grade Quantidade)
             const gradesLabels = gradesData.map(item => item[0]);
             const gradesValues = gradesData.map(item => item[1]);
 
-            // PROCESSAMENTO DE DADOS (Universo)
+            // PROCESSAMENTO DE DADOS (Universo Quantidade)
             const universosLabels = universosData.map(item => item[0]);
             const universosValues = universosData.map(item => item[1]);
+
+            // PROCESSAMENTO DE CUSTO POR GRADE
+            const costLabels = costData.map(item => item[0]);
+            const costValues = costData.map(item => item[1]);
+
+            // PROCESSAMENTO DE EVOLUÇÃO (Map -> Arrays)
+            const evolutionLabels = Object.keys(evolutionMap);
+            const evolutionValues = Object.values(evolutionMap);
 
             // CORES DO TEMA RX-78
             const themeColors = ['#e0cb2d', '#2d5ee0', '#e02d2d', '#ffffff', '#9ca3af'];
@@ -139,18 +149,105 @@
                     }
                 }
             });
+
+            // CHART 3: CUSTO POR GRADE (Pie - Mudado para Pie para diferenciar visualmente)
+            new Chart(document.getElementById('chartCustoGrade'), {
+                type: 'pie',
+                data: {
+                    labels: costLabels,
+                    datasets: [{
+                        data: costValues,
+                        backgroundColor: themeColors,
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { color: '#9ca3af', boxWidth: 12, padding: 20 } },
+                        title: { display: true, text: 'Custo Total por Grade (R$)', color: '#ffffff', font: { size: 16 }, padding: { bottom: 20 } },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    layout: { padding: 10 }
+                }
+            });
+
+            // CHART 4: EVOLUÇÃO DO CUSTO (Line)
+            new Chart(document.getElementById('chartEvolution'), {
+                type: 'line',
+                data: {
+                    labels: evolutionLabels,
+                    datasets: [{
+                        label: 'Valor Acumulado da Coleção',
+                        data: evolutionValues,
+                        borderColor: '#e0cb2d', // Amarelo Gundam V-Fin
+                        backgroundColor: 'rgba(224, 203, 45, 0.2)',
+                        fill: true,
+                        tension: 0.3,
+                        pointBackgroundColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#374151' },
+                            ticks: {
+                                color: '#9ca3af',
+                                callback: function (value, index, values) {
+                                    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumSignificantDigits: 3 }).format(value);
+                                }
+                            }
+                        },
+                        x: { grid: { display: false }, ticks: { color: '#9ca3af' } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: true, text: 'Evolução do Valor da Coleção', color: '#ffffff', font: { size: 16 }, padding: { bottom: 20 } },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed.y);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
         });
         /*]]>*/
     </script>
 
     <!-- LAYOUT DOS GRÁFICOS -->
     <div class="container"
-        style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; margin-bottom: 4rem;">
+        style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; margin-bottom: 2rem;">
         <div class="card" style="padding: 1.5rem; height: 400px;">
             <canvas id="chartGrades"></canvas>
         </div>
         <div class="card" style="padding: 1.5rem; height: 400px;">
             <canvas id="chartUniversos"></canvas>
+        </div>
+        <div class="card" style="padding: 1.5rem; height: 400px;">
+            <canvas id="chartCustoGrade"></canvas>
+        </div>
+        <div class="card" style="padding: 1.5rem; height: 400px;">
+            <canvas id="chartEvolution"></canvas>
         </div>
     </div>
 

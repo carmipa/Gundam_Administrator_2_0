@@ -19,9 +19,14 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.math.BigDecimal;
 
 @Service
 public class GundamKitService {
@@ -113,7 +118,28 @@ public class GundamKitService {
 
         // Dados para Gráficos
         reportData.put("kitsPorGrade", kits.countKitsByGrade());
+        reportData.put("kitsPorGrade", kits.countKitsByGrade());
         reportData.put("kitsPorUniverso", kits.countKitsByUniverso());
+        reportData.put("custoPorGrade", kits.sumCostByGrade());
+
+        // Custo no Tempo (Evolução Acumulada)
+        List<GundamKit> allKits = kits.findAll();
+        // Ordenar por data de compra (nulos no final ou excluidos)
+        List<GundamKit> sortedKits = allKits.stream()
+                .filter(k -> k.getDataCompra() != null)
+                .sorted(Comparator.comparing(GundamKit::getDataCompra))
+                .collect(Collectors.toList());
+
+        Map<String, BigDecimal> evolution = new LinkedHashMap<>();
+        BigDecimal cumulative = BigDecimal.ZERO;
+
+        for (GundamKit k : sortedKits) {
+            cumulative = cumulative.add(k.getPreco());
+            // Usar string ISO (YYYY-MM-DD) como chave. Se houver múltiplas compras no dia,
+            // sobrescreve com o novo total acumulado
+            evolution.put(k.getDataCompra().toString(), cumulative);
+        }
+        reportData.put("evolutionData", evolution);
 
         return reportData;
     }
